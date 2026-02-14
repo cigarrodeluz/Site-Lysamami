@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lysamami - Official</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --card-bg: #fffcfd;
+      --primary: #ffc2d1; 
+      --secondary: #fb6f92; 
+      --text-main: #4a3f41; 
+      --text-muted: #8d7a7d;
+      --border-color: #ffe5ec;
+    }
+    
+    html.dark {
+      --bg-color: #0a0809; 
+      --card-bg: #141011; 
+      --primary: #ff85a1;
+      --secondary: #ff4d6d;
+      --text-main: #fff0f3;
+      --text-muted: #a39093;
+      --border-color: #2d1b1e;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      overflow-x: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      letter-spacing: 0.01em;
+    }
+
+    h1, h2, h3, h4, .font-cute {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 20px;
+    }
+
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    .dark .glass-effect {
+      background: rgba(20, 16, 17, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .banner-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
+    }
+    
+    .dark .banner-gradient {
+      background: radial-gradient(circle at top right, #1f1114, #0a0809);
+    }
+
+    .btn-kawaii {
+      background-color: var(--secondary);
+      color: white;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+    }
+    .btn-kawaii:hover {
+      filter: brightness(1.05);
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px -5px rgba(251, 111, 146, 0.3);
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.45.0"
+  }
+}
+</script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Outfit', 'sans-serif'],
+          cute: ['Quicksand', 'sans-serif'],
+        },
+        colors: {
+          soft: {
+            pink: '#ffc2d1',
+            hot: '#fb6f92',
+            bg: '#fffcfd',
+          }
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="selection:bg-pink-100 dark:selection:bg-pink-900/40">
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
